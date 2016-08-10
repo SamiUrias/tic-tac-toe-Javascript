@@ -62,6 +62,8 @@ function render($html){
 	viewport.innerHTML = output_html;
 	addListeners();
 	drawPosiions();
+	// winner();
+
 }
 
 function changePlayers(){
@@ -210,7 +212,9 @@ function addListeners(){
 }
 
 function winner(){
-	
+	if ((positions[0] = positions[1]) && (positions[2] = positions[3])){
+		console.log("Victoria");
+	}
 }
 /*
 * Dibuja el estado del juego en su punto inicial
