@@ -1,0 +1,13 @@
+.btn-jugadores {
+  margin: 10px; }
+
+.totito-container {
+  width: 700px; }
+
+.square {
+  border: 2px solid black;
+  float: left;
+  font-size: 100px;
+  height: 200px;
+  line-height: 200px;
+  width: 200px; }
