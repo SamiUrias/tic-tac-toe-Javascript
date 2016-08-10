@@ -62,7 +62,7 @@ function render($html){
 	viewport.innerHTML = output_html;
 	addListeners();
 	drawPosiions();
-	// winner();
+	winner();
 
 }
 
@@ -212,9 +212,86 @@ function addListeners(){
 }
 
 function winner(){
-	if ((positions[0] = positions[1]) && (positions[2] = positions[3])){
-		console.log("Victoria");
+	var victoria = false;
+
+	//Primera fila
+	if ((positions[0] == positions[1]) && (positions[1] == positions[2])){
+		if(positions[0] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
 	}
+
+	//Segunda fila
+	if ((positions[3] == positions[4]) && (positions[4] == positions[5])){
+		if(positions[3] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+		//Tercera fila
+	if ((positions[6] == positions[7]) && (positions[7] == positions[8])){
+		if(positions[6] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+
+
+	//Primera columna
+	if ((positions[0] == positions[3]) && (positions[3] == positions[6])){
+		if(positions[0] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+
+	//Segunda columna
+	if ((positions[1] == positions[4]) && (positions[4] == positions[7])){
+		if(positions[1] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+
+
+	//Tercera columna
+	if ((positions[2] == positions[5]) && (positions[5] == positions[8])){
+		if(positions[2] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+
+	//Diagonal superior
+	if ((positions[6] == positions[4]) && (positions[4] == positions[2])){
+		if(positions[6] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+
+	//Diagonal inferior
+	if ((positions[0] == positions[4]) && (positions[4] == positions[8])){
+		if(positions[0] != undefined){
+			victoria = true;
+			console.log("Victoria");
+		}
+	}
+
+
+	if (victoria == true){
+		var winnerPhrase = "El ganador es: ";
+		console.log("Hay un ganador");
+		if (player == 1){
+			winnerPhrase += "Jugador 2";
+		}
+		else {
+			winnerPhrase += "Jugador 1";
+		}
+		viewport.innerHTML = winnerPhrase;
+	}
+
 }
 /*
 * Dibuja el estado del juego en su punto inicial
